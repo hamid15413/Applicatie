@@ -1,32 +1,41 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc 4.9.2 x86_64-w64-mingw32 -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -IE:\Github\Applicatie -IE:\Github\Applicatie\Code\cmsis_lib\include -IE:\Github\Applicatie\Code\cmsis_lib -IE:\Github\Applicatie\Code\cmsis_boot -IE:\Github\Applicatie\Code\draw_lib -IE:\Github\Applicatie\Code\cmsis -IE:\Github\Applicatie\Code\ub_lib -IE:\Github\Applicatie\Code">
-      <target file="stm32f4xx_gpio.o" lastModified="1632683bd70">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="152a194bed0"/>
+   <processor signature="arm-none-eabi-gcc 4.9.2 x86_64-w64-mingw32 -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\ports\include -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\cmsis -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\cmsis_lib\include -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\ports -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\cmsis_boot -IE:\GITHUB_ROOT\VESOFTON -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\ub_lib -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\draw_lib -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4\cmsis_lib -IE:\GITHUB_ROOT\VESOFTON\VGA_core_M4">
+      <target file="stm32f4xx_gpio.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16326306580"/>
       </target>
-      <target file="stm32_ub_vga_screen.o" lastModified="1632683bd70">
-         <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="153c8fea930"/>
+      <target file="uart.o" lastModified="16369362c20">
+         <source file="..\..\..\ports\source\uart.c" lastModified="163644d7560"/>
       </target>
-      <target file="stm32f4xx_dma.o" lastModified="1632683bd70">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="152a194bed0"/>
+      <target file="stm32_ub_vga_screen.o" lastModified="16369362c20">
+         <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16326306580"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="1632683c540">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="152a194bed0"/>
+      <target file="stm32f4xx_dma.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="16326306580"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="1632683bd70">
-         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="152a194bed0"/>
+      <target file="stm32f4xx_tim.o" lastModified="163693633f0">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="16326306580"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="1632683b5a0">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="152a194bed0"/>
+      <target file="system_stm32f4xx.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="16326306580"/>
       </target>
-      <target file="main.o" lastModified="1632683bd70">
-         <source file="..\..\..\main.c" lastModified="16326838e90"/>
+      <target file="startup_stm32f4xx.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16326306580"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="1632683bd70">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="152a194bed0"/>
+      <target file="stm32f4xx_usart.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="16363e02500"/>
       </target>
-      <target file="misc.o" lastModified="1632683bd70">
-         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="152a194bed0"/>
+      <target file="main.o" lastModified="16369a79b30">
+         <source file="..\..\..\main.c" lastModified="16369a79b30"/>
+      </target>
+      <target file="APIdraw.o" lastModified="16369a47680">
+         <source file="..\..\..\draw_lib\APIdraw.c" lastModified="16369a46eb0"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16326306580"/>
+      </target>
+      <target file="misc.o" lastModified="16369362c20">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16326306580"/>
       </target>
    </processor>
 </history>

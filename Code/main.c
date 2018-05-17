@@ -12,23 +12,31 @@
 
 #include "main.h"
 #include "stm32_ub_vga_screen.h"
+#include "stm32f4xx_usart.h"
 #include "APIdraw.h"
+#include "includes.h"
 #include <math.h>
+#include <stdio.h>
+#include <string.h>
+
+
 
 int main(void)
 {
-
-	//  uint32_t n;
 	SystemInit(); // System speed to 168MHz
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
-
 	UB_VGA_FillScreen(VGA_COL_BLACK);
-	UB_VGA_SetPixel(10,10,10);
+	//UB_VGA_SetPixel(0,0,255);
 
+	UART_init();
+	UART_puts("start VESOFTON van Ali en Hamid\n\n");
 
-  while(1)
-  {
-	  // put the code here
-  }
+	lijn(0, 0, 100, 150, 255); //x1,y1,x2,y2,kleur
+
+	while(1)
+	{
+		// put the code here
+
+	}
 }
