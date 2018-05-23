@@ -9,34 +9,31 @@
 // Module   : CMSIS_BOOT, M4_CMSIS_CORE
 // Function : VGA_core DMA LIB 320x240, 8bit color
 //--------------------------------------------------------------
-
 #include "main.h"
-#include "stm32_ub_vga_screen.h"
-#include "stm32f4xx_usart.h"
-#include "APIdraw.h"
-#include "includes.h"
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-
-
 
 int main(void)
 {
 	SystemInit(); // System speed to 168MHz
+	init_VGA_API();
+	init_UART_API();
 
-	UB_VGA_Screen_Init(); // Init VGA-Screen
-	UB_VGA_FillScreen(VGA_COL_BLACK);
-	//UB_VGA_SetPixel(0,0,255);
+	//clearscherm(255);
 
-	UART_init();
-	UART_puts("start VESOFTON van Ali en Hamid\n\n");
+	//UART_puts("start VESOFTON van Ali en Hamid\n\n");
 
-	lijn(0, 0, 100, 150, 255); //x1,y1,x2,y2,kleur
+	//ellips(100, 100, 100, 50, 255);
+	bitmap(3, 20, 20);
+
+	/*
+	for (int var = 0; var < 10; var++)
+	{
+		UART_puts("aantal secondes");
+		wacht(1000000);
+	}
+	*/
 
 	while(1)
 	{
-		// put the code here
 
 	}
 }

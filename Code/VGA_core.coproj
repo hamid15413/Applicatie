@@ -31,7 +31,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
         </MemoryAreas>
-        <LocateLinkFile path="c:/coocox/coide/configuration/programdata/VGA_Core/arm-gcc-link.ld" type="0"/>
+        <LocateLinkFile path="../../../coocox/coide/configuration/programdata/vga_core/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
@@ -76,45 +76,52 @@
     <Component id="524" name="MISC" path="" type="2"/>
   </Components>
   <Files>
+    <File name="EE-API/stm32_ub_vga_screen.h" path="EE-API/stm32_ub_vga_screen.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
-    <File name="ub_lib/stm32_ub_vga_screen.c" path="ub_lib/stm32_ub_vga_screen.c" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
     <File name="cmsis_lib/include/includes.h" path="cmsis_lib/include/includes.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
-    <File name="draw_lib/APIdraw.h" path="draw_lib/APIdraw.h" type="1"/>
+    <File name="applicatie/front_layer.c" path="applicatie/front_layer.c" type="1"/>
+    <File name="EE-API/APIdraw.h" path="EE-API/APIdraw.h" type="1"/>
+    <File name="EE-API/APIdraw.c" path="EE-API/APIdraw.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
-    <File name="ub_lib" path="" type="2"/>
+    <File name="applicatie/front_layer.h" path="applicatie/front_layer.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
     <File name="ports/include" path="" type="2"/>
-    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
-    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="applicatie/logic_layer.c" path="applicatie/logic_layer.c" type="1"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="applicatie" path="" type="2"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+    <File name="applicatie/io_layer.c" path="applicatie/io_layer.c" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
-    <File name="ports/source/uart.c" path="ports/source/uart.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
+    <File name="ports/source/uart.c" path="ports/source/uart.c" type="1"/>
     <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
     <File name="ports" path="" type="2"/>
-    <File name="draw_lib/APIdraw.c" path="draw_lib/APIdraw.c" type="1"/>
-    <File name="cmsis" path="" type="2"/>
+    <File name="EE-API" path="" type="2"/>
+    <File name="main.h" path="../../../Github_root/VESOFTON/VGA_core_M4/main.h" type="1"/>
     <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
+    <File name="cmsis" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
     <File name="cmsis_lib/source" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
     <File name="ports/include/uart.h" path="ports/include/uart.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
+    <File name="EE-API/stm32_ub_vga_screen.c" path="EE-API/stm32_ub_vga_screen.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="ports/source" path="" type="2"/>
-    <File name="ub_lib/stm32_ub_vga_screen.h" path="ub_lib/stm32_ub_vga_screen.h" type="1"/>
-    <File name="draw_lib" path="" type="2"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
     <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="applicatie/logic_layer.h" path="applicatie/logic_layer.h" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
+    <File name="applicatie/io_layer.h" path="applicatie/io_layer.h" type="1"/>
   </Files>
 </Project>
