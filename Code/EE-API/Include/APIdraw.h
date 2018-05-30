@@ -1,22 +1,22 @@
-//------------------------------------------------------------------------
-//  File:   APIdraw.h
-//------------------------------------------------------------------------
+/**
+ * @file:	APIdraw.h
+ */
 
-//------------------------------------------------------------------------
+/* includes */
 #ifndef APIdraw_h
 #define APIdraw_h
 
 #include "stm32_ub_vga_screen.h"
+#include <string.h>
+#include <stdlib.h>
 #include <math.h>
 
-
-//--------------------------------------------------------------
-// color designation
-// 8bit color (R3G3B2)
-// Red   (3bit) -> Bit7-Bit5
-// Green (3bit) -> Bit4-Bit2
-// Blue  (2bit) -> Bit1-Bit0
-//--------------------------------------------------------------
+/* color designation
+ * 8bit color (R3G3B2)
+ * Red   (3bit) -> Bit7-Bit5
+ * Green (3bit) -> Bit4-Bit2
+ * Blue  (2bit) -> Bit1-Bit0
+ */
 #define 	ZWART          	0x00
 #define 	WIT          	0xFF
 #define 	GRIJS			0X4D
@@ -36,42 +36,27 @@
 /* bitmap grootte */
 #define		BITMAP_ARRAY_GROOTTE 	20
 
-/* */
-typedef enum {false = 0, true = 1} bool;
+/* lijn constanten */
+#define 	RC_GRENSWAARDE 	0.6
 
-/* Benodigde constanten voor de tekst */
+/* VGA constanden */
+#define 	VGA_DISPLAY_X   320
+#define 	VGA_DISPLAY_Y   240
+
+/* tekst constanten */
 #define FONT_LENGTH						128
 #define FONT_WIDTH						8
 #define START_ASCII_NR					32
 
+/* enumeratie font stijls */
 enum stijls{
 	NORM,
 	VET,
 	CURS
 };
 
-
-//char font8x8_normaal[FONT_LENGTH][FONT_WIDTH];
-
-#define 	RC_GRENSWAARDE 	0.6
-
-#define VGA_DISPLAY_X   320
-#define VGA_DISPLAY_Y   240
-
-/** de draw functies worden hier geïnitialiseerd */
-void lijn(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t lijn_dikte, uint8_t kleur);
-void ellips(uint16_t x_mp, uint16_t y_mp, uint16_t radius_x, uint16_t radius_y, uint8_t kleur);
-void rechthoek(uint16_t x_lo, uint8_t y_lo, uint16_t x_rb, uint8_t y_rb, uint8_t kleur);
-void driehoek(uint16_t x1, uint8_t y1, uint16_t x2, uint8_t y2, uint16_t x3, uint8_t y3, uint8_t kleur);
-void letter(uint8_t x_loc, uint8_t y_loc, unsigned char letter, uint8_t kleur, uint8_t stijl);
-void tekst (uint8_t x_loc, uint8_t y_loc, char *tekst, uint8_t kleur, uint8_t stijl);
-void bitmap_generator(uint8_t arr[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE], uint16_t x_lo, uint16_t y_lo);
-void bitmap(uint8_t nr, uint16_t x_lo, uint16_t y_lo);
-void clearscherm(uint8_t kleur);
-void wacht(volatile unsigned int msecs);
-
 /* arrays zijn gemaakt op http://www.digole.com/tools/PicturetoC_Hex_converter.php */
-uint8_t smiley_blij[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
+unsigned char smiley_blij[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
 	{0,0,0,0,0,0,0,36,72,108,108,72,36,0,0,0,0,0,0,0}
 	,{0,0,0,0,0,72,217,253,253,253,252,252,252,216,72,0,0,0,0,0}
@@ -95,7 +80,7 @@ uint8_t smiley_blij[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 	,{0,0,0,0,0,0,0,36,72,108,108,72,36,0,0,0,0,0,0,0}
 };
 
-uint8_t smiley_boos[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
+unsigned char smiley_boos[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
 	{0,0,0,0,0,0,0,32,64,64,64,64,32,0,0,0,0,0,0,0}
 	,{0,0,0,0,0,64,132,196,201,237,237,201,196,132,64,0,0,0,0,0}
@@ -119,7 +104,7 @@ uint8_t smiley_boos[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 	,{0,0,0,0,0,0,0,32,64,64,64,64,32,0,0,0,0,0,0,0}
 };
 
-uint8_t pijl_omhoog[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
+unsigned char pijl_omhoog[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
 	{255,255,255,255,255,255,255,255,255,146,146,255,255,255,255,255,255,255,255,255}
 	,{255,255,255,255,255,255,255,255,146,0,0,146,255,255,255,255,255,255,255,255}
@@ -143,7 +128,7 @@ uint8_t pijl_omhoog[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 	,{255,255,255,255,255,255,0,0,0,0,0,0,0,0,255,255,255,255,255,255}
 };
 
-uint8_t pijl_omlaag[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
+unsigned char pijl_omlaag[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
 	{255,255,255,255,255,255,0,0,0,0,0,0,0,0,255,255,255,255,255,255}
 	,{255,255,255,255,255,255,0,0,0,0,0,0,0,0,255,255,255,255,255,255}
@@ -167,7 +152,7 @@ uint8_t pijl_omlaag[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 	,{255,255,255,255,255,255,255,255,255,146,146,255,255,255,255,255,255,255,255,255}
 };
 
-uint8_t pijl_rechts[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
+unsigned char pijl_rechts[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
 	{255,255,255,255,255,255,255,255,255,255,182,255,255,255,255,255,255,255,255,255}
 	,{255,255,255,255,255,255,255,255,255,255,36,146,255,255,255,255,255,255,255,255}
@@ -191,7 +176,7 @@ uint8_t pijl_rechts[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 	,{255,255,255,255,255,255,255,255,255,255,182,255,255,255,255,255,255,255,255,255}
 };
 
-uint8_t pijl_links[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
+unsigned char pijl_links[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
 	{255,255,255,255,255,255,255,255,255,182,255,255,255,255,255,255,255,255,255,255}
 	,{255,255,255,255,255,255,255,255,109,36,255,255,255,255,255,255,255,255,255,255}
@@ -216,7 +201,7 @@ uint8_t pijl_links[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 };
 
 /* Tekst 8x8 array */
-char font8x8_normaal[FONT_LENGTH][FONT_WIDTH] = {
+unsigned char font8x8_normaal[FONT_LENGTH][FONT_WIDTH] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0000 (nul)
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0001
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+0002
@@ -346,5 +331,18 @@ char font8x8_normaal[FONT_LENGTH][FONT_WIDTH] = {
     { 0x6E, 0x3B, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},   // U+007E (~)
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}    // U+007F
 };
+
+/** de draw functies worden hier geïnitialiseerd */
+void lijn(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint8_t lijn_dikte, uint8_t kleur);
+void ellips(uint16_t x_mp, uint16_t y_mp, uint16_t radius_x, uint16_t radius_y, uint8_t kleur);
+void rechthoek(uint16_t x_lo, uint8_t y_lo, uint16_t x_rb, uint8_t y_rb, uint8_t kleur);
+void driehoek(uint16_t x1, uint8_t y1, uint16_t x2, uint8_t y2, uint16_t x3, uint8_t y3, uint8_t kleur);
+void letter(uint8_t x_loc, uint8_t y_loc, unsigned char letter, uint8_t kleur, uint8_t stijl);
+void tekst (uint8_t x_loc, uint8_t y_loc, char *tekst, uint8_t kleur, uint8_t stijl);
+void bitmap_generator(uint8_t arr[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE], uint16_t x_lo, uint16_t y_lo);
+void bitmap(uint8_t nr, uint16_t x_lo, uint16_t y_lo);
+void clearscherm(uint8_t kleur);
+void wacht(volatile unsigned int msecs);
+void VGA_set_pixel(uint16_t xp, uint16_t yp, uint8_t kleur);
 
 #endif /** APIdraw_h */

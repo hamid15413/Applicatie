@@ -7,18 +7,18 @@
 
 int main(void)
 {
-	/* System speed to 168MHz */
-	SystemInit();
+	/* instellen van de microcontroller systeem */
+	init_system_API();
 
-	/*  */
+	/* initialiseren van de VGA module */
 	init_VGA_API();
+
+	/* initialisatie van UART */
 	init_UART_API();
-
-	//UART_puts("Welkom"); UART_puts("\r");
-
 
 	while(1)
 	{
+		/* Front Layer aanroepen */
 		lees_buffer();
 	}
 }

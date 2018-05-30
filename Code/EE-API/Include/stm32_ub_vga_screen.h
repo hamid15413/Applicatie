@@ -18,7 +18,6 @@
 #include "stm32f4xx_dma.h"
 
 
-
 //--------------------------------------------------------------
 // color designation
 // 8bit color (R3G3B2)
