@@ -1,7 +1,5 @@
 /*
  * @file main.c
- *
- *
  */
 #include "main.h"
 

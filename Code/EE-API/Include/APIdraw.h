@@ -55,6 +55,9 @@ enum stijls{
 	CURS
 };
 
+/* Warning codes */
+static const char WARNING01[] = "WARNING01: de pixels bevinden zich buiten VGA range.";
+
 /* arrays zijn gemaakt op http://www.digole.com/tools/PicturetoC_Hex_converter.php */
 unsigned char smiley_blij[BITMAP_ARRAY_GROOTTE][BITMAP_ARRAY_GROOTTE] =
 {
